@@ -73,14 +73,41 @@
 // console.log(b.x) // 3
 // console.log(b.y) // undefined
 
-let x = {x : 6}
-let y = {y : 4, z : 9}
+// let x = {x : 6}
+// let y = {y : 4, z : 9, toString:function(){return(`${this.y}, ${this.z}`)}}
+// console.log(y.toString()) // 4, 9
 // for(let key of Object.keys(y)){
 //     x[key] = y[key]
 // }
 // console.log(x) // {x:6, y:4, z:9}
 
-let z = Object.assign({}, y) // copy the array
-z.y = 8 // change the value of y
-console.log(z) // {y:8, z:9}
-console.log(y) // {y:4, z:9}
+// let z = Object.assign({}, y) // copy the array
+// z.y = 8 // change the value of y
+// console.log(z) // {y:8, z:9}
+// console.log(y) // {y:4, z:9}
+
+let x ={x:3, y:4, z:5}
+let y = {...x}
+console.log(x==y) // false
+y.y = 7
+console.log(x) // {x:3, y:4, z:5}
+console.log(y) // {x:3, y:7, z:5}
+
+
+let z = {
+    a : 10,
+    b : 20,
+    sum(){return this.a + this.b},
+    multiply(){return this.sum() * this.sum()}
+}
+console.log(z.sum()) // 30
+console.log(z.multiply()) // 900
+z.a = [2,3]
+console.log(z.a) // array [2,3]
+console.log(z?.a[1]) // 3
+
+
+
+
+
+
