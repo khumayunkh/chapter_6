@@ -98,8 +98,11 @@ let z = {
     a : 10,
     b : 20,
     sum(){return this.a + this.b},
-    multiply(){return this.sum() * this.sum()}
+    multiply(){return this.sum() * this.sum()},
+    toString(){return (`${this.sum()} ${this.multiply()}`)}
 }
+console.log(z.toString()) // 30, 900
+console.log(typeof z.toString()) // string
 console.log(z.sum()) // 30
 console.log(z.multiply()) // 900
 z.a = [2,3]
